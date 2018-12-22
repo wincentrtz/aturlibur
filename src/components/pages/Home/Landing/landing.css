@@ -1,0 +1,19 @@
+#landing-motto {
+  align-self: center;
+}
+
+#landing-image {
+  width: 100%;
+}
+
+.btn-theme {
+  background-color: #0288d1;
+  color: white;
+  border-radius: 10px;
+}
+
+.btn-theme:hover {
+  background-color: white;
+  border-color: #0288d1;
+  color: #0288d1;
+}
