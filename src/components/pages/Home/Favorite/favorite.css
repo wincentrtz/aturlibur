@@ -1,0 +1,58 @@
+#favorite-section {
+  padding-bottom: 50px;
+}
+
+#favorite-first {
+  width: 300px !important;
+  border-radius: 10px;
+  height: 400px !important;
+  background-color: #0288d1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.favorite-item {
+  width: 300px !important;
+  border-radius: 10px;
+  height: 400px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../../assets/bali.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  transition: 0.5s ease;
+  margin: 0 auto;
+  margin-right: 0;
+}
+
+.favorite-item > h2 {
+  color: white;
+}
+
+.favorite-item:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#favorite-last {
+  width: 300px !important;
+  border-radius: 10px;
+  height: 400px !important;
+  background-color: #0288d1;
+  color: white;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-right: 0;
+}
+
+#slider {
+  padding: 0;
+}

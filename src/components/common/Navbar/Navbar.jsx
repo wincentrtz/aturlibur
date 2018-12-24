@@ -32,6 +32,9 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link">Feedback</a>
           </li>
+          <li className="nav-item">
+            <button className="btn btn-theme">Login</button>
+          </li>
         </ul>
       </div>
     </nav>

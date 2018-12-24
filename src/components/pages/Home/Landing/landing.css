@@ -1,5 +1,10 @@
-#landing-motto {
+#landing-section {
+  margin-bottom: 100px;
+}
+
+#landing-motto-section {
   align-self: center;
+  padding-left: 100px;
 }
 
 #landing-image {
@@ -10,10 +15,21 @@
   background-color: #0288d1;
   color: white;
   border-radius: 10px;
+  font-size: 1.2rem;
 }
 
 .btn-theme:hover {
   background-color: white;
   border-color: #0288d1;
   color: #0288d1;
+}
+
+@media only screen and (max-width: 768px) {
+  #landing-motto-section {
+    order: 1;
+    text-align: center;
+  }
+  #landing-motto-section > h1 {
+    font-size: 1.5rem;
+  }
 }
