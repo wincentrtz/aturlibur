@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "jquery/dist/jquery.js";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
+import "font-awesome/css/font-awesome.css";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

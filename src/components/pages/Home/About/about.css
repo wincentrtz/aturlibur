@@ -1,17 +1,22 @@
 #about-section {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  background-color: #0288d1;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #about-title {
   text-align: center;
-  color: #0288d1;
+  color: white;
 }
 
 .about-item-logo {
   width: 35%;
   display: block;
   margin: 0 auto;
+}
+
+.about-item-container {
+  padding: 50px;
 }
 
 .about-item-description {
