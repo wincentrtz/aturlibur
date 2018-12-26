@@ -20,6 +20,7 @@ const settings = {
 const rowStyle = {
   display: "flex"
 };
+
 const Story = ({ story }) => {
   return (
     <div className="container" id="story-section">
@@ -32,15 +33,16 @@ const Story = ({ story }) => {
             </div>
             <div className="col-6" id="story-sliders">
               <div className="story-description">
-                <h2>{item.title}</h2>
-                <h4>
+                <h2 className="story-name">{item.title}</h2>
+                <h4 className="mb-4">
                   <i className="fa fa-star" />
                   <i className="fa fa-star" />
                   <i className="fa fa-star" />
                   <i className="fa fa-star" />
                   <i className="fa fa-star" />
                 </h4>
-                <h4>{item.description}</h4>
+                <h5>{item.description}</h5>
+                <h6 className="learn-more mt-4">Learn More</h6>
               </div>
             </div>
           </div>

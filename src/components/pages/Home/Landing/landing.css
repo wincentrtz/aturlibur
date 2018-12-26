@@ -11,17 +11,7 @@
   width: 100%;
 }
 
-.btn-theme {
-  background-color: #0288d1;
-  color: white;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.btn-theme:hover {
+.btn-round:hover {
   background-color: white;
   border-color: #0288d1;
   color: #0288d1;

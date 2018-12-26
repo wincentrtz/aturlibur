@@ -17,9 +17,9 @@ class Home extends Component {
       },
       {
         image: "selfie",
-        title: "Bali Expedition 2",
+        title: "Jogjakarta Expedition 2",
         description:
-          "Bali is an awesome place where you can chill and forget all your exhausted day. Hopefully my trip can suite with what you want."
+          "Jogjakarta is an awesome place where you can chill and forget all your exhausted day. Hopefully my trip can suite with what you want."
       }
     ]
   };

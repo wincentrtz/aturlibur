@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import RoundButton from "../RoundButton/RoundButton";
 
 const Navbar = () => {
   return (
@@ -33,7 +34,7 @@ const Navbar = () => {
             <a className="nav-link">Feedback</a>
           </li>
           <li className="nav-item">
-            <button className="btn btn-theme">Login</button>
+            <RoundButton text={"Login"} size={"small"} />
           </li>
         </ul>
       </div>
