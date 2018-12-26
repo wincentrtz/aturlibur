@@ -4,9 +4,9 @@ import Slider from "react-slick";
 import story from "../../../../assets/story.jpg";
 import selfie from "../../../../assets/selfie.jpg";
 import "./story.css";
+import RoundImage from "../../../common/RoundImage/RoundImage";
 
 const settings = {
-  dots: true,
   fade: true,
   infinite: true,
   speed: 500,
@@ -17,49 +17,22 @@ const settings = {
   pauseOnHover: false
 };
 
-const Story = () => {
+const rowStyle = {
+  display: "flex"
+};
+const Story = ({ story }) => {
   return (
     <div className="container" id="story-section">
       <h1 id="story-title">Everyone's Story</h1>
-      <div className="row">
-        <div className="col-6">
-          <Slider {...settings}>
-            <div>
-              <img src={story} className="image-slider" />
+      <Slider {...settings}>
+        {story.map(item => (
+          <div key={item.title} className="row slider-row">
+            <div className="col-6">
+              <RoundImage image={item.image} />
             </div>
-            <div>
-              <img src={selfie} className="image-slider" />
-            </div>
-            <div>
-              <img src={story} className="image-slider" />
-            </div>
-            <div>
-              <img src={selfie} className="image-slider" />
-            </div>
-            <div>
-              <img src={story} className="image-slider" />
-            </div>
-          </Slider>
-        </div>
-        <div className="col-6" id="story-sliders">
-          <Slider {...settings}>
-            <div className="story-description">
-              <h2>MY TRIP TO BALI</h2>
-              <h4>
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </h4>
-              <h4>
-                Bali is an awesome place where you can chill and forget all your
-                exhausted day. Hopefully my trip can suite with what you want.
-              </h4>
-            </div>
-            <div className="story-description">
-              <h2>MY TRIP TO BALI 2</h2>
-              <h4>
+            <div className="col-6" id="story-sliders">
+              <div className="story-description">
+                <h2>{item.title}</h2>
                 <h4>
                   <i className="fa fa-star" />
                   <i className="fa fa-star" />
@@ -67,55 +40,12 @@ const Story = () => {
                   <i className="fa fa-star" />
                   <i className="fa fa-star" />
                 </h4>
-                Bali is an awesome place where you can chill and forget all your
-                exhausted day. Hopefully my trip can suite with what you want.
-              </h4>
+                <h4>{item.description}</h4>
+              </div>
             </div>
-            <div className="story-description">
-              <h2>MY TRIP TO BALI</h2>
-              <h4>
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </h4>
-              <h4>
-                Bali is an awesome place where you can chill and forget all your
-                exhausted day. Hopefully my trip can suite with what you want.
-              </h4>
-            </div>
-            <div className="story-description">
-              <h2>MY TRIP TO BALI 2</h2>
-              <h4>
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </h4>
-              <h4>
-                Bali is an awesome place where you can chill and forget all your
-                exhausted day. Hopefully my trip can suite with what you want.
-              </h4>
-            </div>
-            <div className="story-description">
-              <h2>MY TRIP TO BALI</h2>
-              <h4>
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </h4>
-              <h4>
-                Bali is an awesome place where you can chill and forget all your
-                exhausted day. Hopefully my trip can suite with what you want.
-              </h4>
-            </div>
-          </Slider>
-        </div>
-      </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

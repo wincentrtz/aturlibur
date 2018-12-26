@@ -7,9 +7,12 @@
   margin-bottom: 50px;
 }
 
-.image-slider {
-  border-radius: 30px;
+.slick-slider {
   width: 100%;
+}
+
+.slider-row {
+  display: flex !important;
 }
 
 #story-sliders {
