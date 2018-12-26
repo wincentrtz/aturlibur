@@ -2,7 +2,8 @@ import React from "react";
 import "./roundButton.css";
 
 const style = {
-  padding: "10px 20px"
+  padding: "10px 20px",
+  marginRight: "10px"
 };
 
 const RoundButton = ({ text, size }) => {

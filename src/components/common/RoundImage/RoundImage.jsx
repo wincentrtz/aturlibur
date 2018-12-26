@@ -2,7 +2,6 @@ import React from "react";
 import "./roundImage.css";
 
 const RoundImage = ({ image }) => {
-  console.log(image);
   return (
     <div>
       <img

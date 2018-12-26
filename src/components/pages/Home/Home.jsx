@@ -5,6 +5,7 @@ import Landing from "./Landing/Landing";
 import About from "./About/About";
 import Favorite from "./Favorite/Favorite";
 import Story from "./Story/Story";
+import Footer from "./Footer/footer";
 
 class Home extends Component {
   state = {
@@ -32,6 +33,7 @@ class Home extends Component {
         <About />
         <Favorite />
         <Story story={story} />
+        <Footer />
       </div>
     );
   }

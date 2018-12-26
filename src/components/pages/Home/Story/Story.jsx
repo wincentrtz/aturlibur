@@ -1,24 +1,14 @@
 import React from "react";
-
 import Slider from "react-slick";
-import story from "../../../../assets/story.jpg";
-import selfie from "../../../../assets/selfie.jpg";
 import "./story.css";
 import RoundImage from "../../../common/RoundImage/RoundImage";
 
 const settings = {
-  fade: true,
   infinite: true,
-  speed: 500,
+  speed: 200,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
-  dots: false,
-  pauseOnHover: false
-};
-
-const rowStyle = {
-  display: "flex"
+  autoplay: true
 };
 
 const Story = ({ story }) => {
@@ -28,10 +18,10 @@ const Story = ({ story }) => {
       <Slider {...settings}>
         {story.map(item => (
           <div key={item.title} className="row slider-row">
-            <div className="col-6">
+            <div className="col-6" style={{ padding: "0" }}>
               <RoundImage image={item.image} />
             </div>
-            <div className="col-6" id="story-sliders">
+            <div className="col-6" id="story-sliders" style={{ padding: "0" }}>
               <div className="story-description">
                 <h2 className="story-name">{item.title}</h2>
                 <h4 className="mb-4">
@@ -42,7 +32,9 @@ const Story = ({ story }) => {
                   <i className="fa fa-star" />
                 </h4>
                 <h5>{item.description}</h5>
-                <h6 className="learn-more mt-4">Learn More</h6>
+                <h1 className="learn-more mt-4">
+                  <i className="fa fa-long-arrow-right" />
+                </h1>
               </div>
             </div>
           </div>
