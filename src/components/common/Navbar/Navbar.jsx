@@ -5,7 +5,9 @@ import RoundButton from "../RoundButton/RoundButton";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand">AturLibur</a>
+      <a style={{ marginLeft: "20px" }} className="navbar-brand">
+        AturLibur
+      </a>
       <button
         className="navbar-toggler"
         type="button"

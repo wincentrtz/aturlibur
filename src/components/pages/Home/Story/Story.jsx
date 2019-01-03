@@ -32,7 +32,7 @@ const Story = ({ story }) => {
                   <i className="fa fa-star" />
                 </h4>
                 <h5>{item.description}</h5>
-                <h1 className="learn-more mt-4">
+                <h1 className="learn-more">
                   <i className="fa fa-long-arrow-right" />
                 </h1>
               </div>

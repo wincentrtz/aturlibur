@@ -28,7 +28,6 @@ class Home extends Component {
     const { story } = this.state;
     return (
       <div>
-        <Navbar />
         <Landing />
         <About />
         <Favorite />

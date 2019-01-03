@@ -1,0 +1,27 @@
+#album-title {
+  color: #0288d1;
+  font-weight: bolder;
+}
+
+#add-section {
+  background-image: url("../../../assets/sunrise.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 323px;
+}
+
+#plus-image {
+  width: 15%;
+  transition: 0.1s ease-in;
+}
+
+#plus-image:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
