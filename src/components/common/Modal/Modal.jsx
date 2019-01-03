@@ -1,12 +1,12 @@
 import React from "react";
 import "./modal.css";
+import Input from "../Input/Input";
 
-const Modal = () => {
+const Modal = ({ modal }) => {
   return (
     <div
       className="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
+      id={modal.id}
       role="dialog"
       aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true"
@@ -15,7 +15,7 @@ const Modal = () => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalCenterTitle">
-              Create Album
+              {modal.title}
             </h5>
             <button
               type="button"
@@ -27,25 +27,9 @@ const Modal = () => {
             </button>
           </div>
           <div className="modal-body">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
-              />
-            </div>
+            {modal.input.map(input => (
+              <Input key={input.label} input={input} />
+            ))}
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-primary">

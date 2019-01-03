@@ -19,27 +19,49 @@ class Album extends Component {
         title: "Event 1",
         date: "21 December 2018"
       }
-    ]
+    ],
+    modal: {
+      title: "Add Album",
+      id: "album-modal",
+      input: [
+        {
+          label: "Album Name",
+          type: "text"
+        },
+        {
+          label: "Album Start Date",
+          type: "date"
+        },
+        {
+          label: "Album End Date",
+          type: "date"
+        },
+        {
+          label: "Album Picture",
+          type: "file"
+        }
+      ]
+    }
   };
 
   render() {
-    const { albums } = this.state;
+    const { albums, modal } = this.state;
     return (
       <div className="container">
-        <Modal />
+        <Modal modal={modal} key={modal.id} />
         <h1 id="album-title" className="mt-5 mb-5">
           Your Holiday's Album
         </h1>
         <div className="row">
-          <div class="col-sm-4 mb-3">
-            <div class="card" id="add-section">
+          <div className="col-sm-4 mb-3">
+            <div className="card" id="add-section">
               <img
-                class="card-img-top"
+                className="card-img-top"
                 id="plus-image"
                 src={plus}
                 alt="Card image cap"
                 data-toggle="modal"
-                data-target="#exampleModalCenter"
+                data-target={"#" + modal.id}
               />
             </div>
           </div>

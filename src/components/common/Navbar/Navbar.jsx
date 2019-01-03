@@ -1,8 +1,9 @@
 import React from "react";
 import "./navbar.css";
 import RoundButton from "../RoundButton/RoundButton";
+import Modal from "../Modal/Modal";
 
-const Navbar = () => {
+const Navbar = ({ modal }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a style={{ marginLeft: "20px" }} className="navbar-brand">
@@ -36,10 +37,11 @@ const Navbar = () => {
             <a className="nav-link">Feedback</a>
           </li>
           <li className="nav-item">
-            <RoundButton text={"Login"} size={"small"} />
+            <RoundButton id={modal.id} text={"Login"} size={"small"} />
           </li>
         </ul>
       </div>
+      <Modal modal={modal} key={modal.id} />
     </nav>
   );
 };
