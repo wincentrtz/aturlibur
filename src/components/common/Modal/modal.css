@@ -1,3 +1,14 @@
+.modal-dialog {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.modal-header {
+  background-color: #0288d1;
+  border-radius: 20px 20px 0px 0px;
+  color: white;
+}
+
 .modal-content {
   border-radius: 20px;
 }

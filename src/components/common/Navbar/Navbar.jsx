@@ -2,13 +2,14 @@ import React from "react";
 import "./navbar.css";
 import RoundButton from "../RoundButton/RoundButton";
 import Modal from "../Modal/Modal";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = ({ modal }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a style={{ marginLeft: "20px" }} className="navbar-brand">
+      <Link to="/" style={{ marginLeft: "20px" }} className="navbar-brand">
         AturLibur
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
