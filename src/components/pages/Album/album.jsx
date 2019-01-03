@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./album.css";
 import RoundCard from "../../common/RoundCard/RoundCard";
 import plus from "../../../assets/plus.png";
+import Modal from "../../common/Modal/Modal";
 
 class Album extends Component {
   state = {
@@ -25,6 +26,7 @@ class Album extends Component {
     const { albums } = this.state;
     return (
       <div className="container">
+        <Modal />
         <h1 id="album-title" className="mt-5 mb-5">
           Your Holiday's Album
         </h1>
@@ -36,6 +38,8 @@ class Album extends Component {
                 id="plus-image"
                 src={plus}
                 alt="Card image cap"
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
               />
             </div>
           </div>
