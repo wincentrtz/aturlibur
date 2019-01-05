@@ -28,6 +28,15 @@ class App extends Component {
     login: {
       email: "",
       password: ""
+    },
+    status: false
+  };
+
+  componentDidMount = () => {
+    const token = localStorage.getItem("user_token");
+    if (token) {
+      const status = true;
+      this.setState({ status });
     }
   };
 
@@ -36,7 +45,8 @@ class App extends Component {
       this.state.login.email,
       this.state.login.password
     );
-    // window.location = "/album";
+    this.setState({ login: true });
+    window.location = "/album";
   };
 
   handleChange = e => {
@@ -46,13 +56,14 @@ class App extends Component {
   };
 
   render() {
-    const { modal } = this.state;
+    const { modal, status } = this.state;
     return (
       <React.Fragment>
         <Navbar
           modal={modal}
           onChange={this.handleChange}
           onPost={this.handlePost}
+          status={status}
         />
         <Switch>
           <Route exact path="/album" component={Album} />

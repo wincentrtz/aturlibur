@@ -4,7 +4,7 @@ import RoundButton from "../RoundButton/RoundButton";
 import Modal from "../Modal/Modal";
 import { NavLink, Link } from "react-router-dom";
 
-const Navbar = ({ modal, onPost, onChange }) => {
+const Navbar = ({ modal, onPost, onChange, status }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link to="/" style={{ marginLeft: "20px" }} className="navbar-brand">
@@ -38,7 +38,28 @@ const Navbar = ({ modal, onPost, onChange }) => {
             <a className="nav-link">Feedback</a>
           </li>
           <li className="nav-item">
-            <RoundButton id={modal.id} text={"Login"} size={"small"} />
+            {status ? (
+              <div>
+                <span
+                  id="navbar-name"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Wincent
+                </span>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <button class="dropdown-item" type="button">
+                    Holiday Album
+                  </button>
+                  <button class="dropdown-item" type="button">
+                    Logout
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <RoundButton id={modal.id} text={"Login"} size={"small"} />
+            )}
           </li>
         </ul>
       </div>
