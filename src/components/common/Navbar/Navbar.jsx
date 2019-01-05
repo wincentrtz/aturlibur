@@ -4,7 +4,7 @@ import RoundButton from "../RoundButton/RoundButton";
 import Modal from "../Modal/Modal";
 import { NavLink, Link } from "react-router-dom";
 
-const Navbar = ({ modal }) => {
+const Navbar = ({ modal, onPost, onChange }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link to="/" style={{ marginLeft: "20px" }} className="navbar-brand">
@@ -42,7 +42,7 @@ const Navbar = ({ modal }) => {
           </li>
         </ul>
       </div>
-      <Modal modal={modal} key={modal.id} />
+      <Modal onChange={onChange} onPost={onPost} modal={modal} key={modal.id} />
     </nav>
   );
 };

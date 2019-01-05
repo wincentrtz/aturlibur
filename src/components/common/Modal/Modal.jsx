@@ -2,7 +2,7 @@ import React from "react";
 import "./modal.css";
 import Input from "../Input/Input";
 
-const Modal = ({ modal }) => {
+const Modal = ({ modal, onPost, onChange }) => {
   return (
     <div
       className="modal fade"
@@ -28,12 +28,12 @@ const Modal = ({ modal }) => {
           </div>
           <div className="modal-body">
             {modal.input.map(input => (
-              <Input key={input.label} input={input} />
+              <Input onChange={onChange} key={input.label} input={input} />
             ))}
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-primary">
-              Save changes
+            <button type="button" onClick={onPost} className="btn btn-primary">
+              {modal.button}
             </button>
           </div>
         </div>

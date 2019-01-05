@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import "./App.css";
 import Home from "./components/pages/Home/Home";
 import { Switch, Route } from "react-router-dom";
+import { userLogin } from "./services/user/authService";
 import Navbar from "./components/common/Navbar/Navbar";
 import City from "./components/pages/City/City";
 import Plan from "./components/pages/Plan/Plan";
 import Album from "./components/pages/Album/album";
-import Modal from "./components/common/Modal/Modal";
 
 class App extends Component {
   state = {
     modal: {
       title: "Join Our Adventure~!",
       id: "login-modal",
+      button: "Login",
       input: [
         {
           label: "Email",
@@ -23,13 +24,36 @@ class App extends Component {
           type: "password"
         }
       ]
+    },
+    login: {
+      email: "",
+      password: ""
     }
   };
+
+  handlePost = async () => {
+    const response = await userLogin(
+      this.state.login.email,
+      this.state.login.password
+    );
+    // window.location = "/album";
+  };
+
+  handleChange = e => {
+    const login = { ...this.state.login };
+    login[e.target.type] = e.target.value;
+    this.setState({ login });
+  };
+
   render() {
     const { modal } = this.state;
     return (
       <React.Fragment>
-        <Navbar modal={modal} />
+        <Navbar
+          modal={modal}
+          onChange={this.handleChange}
+          onPost={this.handlePost}
+        />
         <Switch>
           <Route exact path="/album" component={Album} />
           <Route exact path="/plan" component={Plan} />
