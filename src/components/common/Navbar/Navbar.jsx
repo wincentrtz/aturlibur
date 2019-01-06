@@ -4,7 +4,7 @@ import RoundButton from "../RoundButton/RoundButton";
 import Modal from "../Modal/Modal";
 import { NavLink, Link } from "react-router-dom";
 
-const Navbar = ({ modal, onPost, onChange, status }) => {
+const Navbar = ({ modal, onPost, onChange, onLogout, status }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link to="/" style={{ marginLeft: "20px" }} className="navbar-brand">
@@ -50,9 +50,13 @@ const Navbar = ({ modal, onPost, onChange, status }) => {
                 </span>
                 <div class="dropdown-menu dropdown-menu-right">
                   <button class="dropdown-item" type="button">
-                    Holiday Album
+                    <NavLink to="/album">Holiday Album</NavLink>
                   </button>
-                  <button class="dropdown-item" type="button">
+                  <button
+                    onClick={onLogout}
+                    class="dropdown-item"
+                    type="button"
+                  >
                     Logout
                   </button>
                 </div>

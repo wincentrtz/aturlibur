@@ -10,8 +10,10 @@ const RoundCard = ({ card }) => {
         <div className="card-body">
           <div className="row">
             <div className="col-8">
-              <h5 className="card-title">{card.title}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">{card.date}</h6>
+              <h5 className="card-title">{card.trip_name}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">
+                {card.trip_start_date}
+              </h6>
             </div>
             <div className="col-4">
               <button className="btn btn-primary">Check</button>

@@ -55,6 +55,13 @@ class App extends Component {
     this.setState({ login });
   };
 
+  handleLogout = () => {
+    localStorage.removeItem("user_token");
+    const status = false;
+    this.setState({ status });
+    window.location = "/";
+  };
+
   render() {
     const { modal, status } = this.state;
     return (
@@ -64,6 +71,7 @@ class App extends Component {
           onChange={this.handleChange}
           onPost={this.handlePost}
           status={status}
+          onLogout={this.handleLogout}
         />
         <Switch>
           <Route exact path="/album" component={Album} />
