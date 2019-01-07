@@ -6,7 +6,7 @@ import { userLogin } from "./services/user/authService";
 import Navbar from "./components/common/Navbar/Navbar";
 import City from "./components/pages/City/City";
 import Plan from "./components/pages/Plan/Plan";
-import Album from "./components/pages/Album/album";
+import Album from "./components/pages/Album/Album";
 
 class App extends Component {
   state = {
@@ -74,8 +74,8 @@ class App extends Component {
           onLogout={this.handleLogout}
         />
         <Switch>
+          <Route exact path="/plan/:name" component={Plan} />
           <Route exact path="/album" component={Album} />
-          <Route exact path="/plan" component={Plan} />
           <Route exact path="/location" component={City} />
           <Route exact path="/" component={Home} />
         </Switch>

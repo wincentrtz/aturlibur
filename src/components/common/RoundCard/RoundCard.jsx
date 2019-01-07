@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../../../assets/sunrise.jpg";
+import { Link } from "react-router-dom";
 import "./roundCard.css";
 
 const RoundCard = ({ card }) => {
@@ -16,7 +17,9 @@ const RoundCard = ({ card }) => {
               </h6>
             </div>
             <div className="col-4">
-              <button className="btn btn-primary">Check</button>
+              <Link to={"plan/" + card.trip_name} className="btn btn-primary">
+                Check
+              </Link>
             </div>
           </div>
         </div>

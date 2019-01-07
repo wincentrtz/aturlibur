@@ -1,0 +1,15 @@
+.calendar-card {
+  border-radius: 20px;
+  transition: 0.2s ease;
+  color: black !important;
+}
+
+.calendar-card:hover {
+  background-color: #0288d1;
+  color: white !important;
+  cursor: pointer;
+}
+
+.calendar-title {
+  font-size: 4rem !important;
+}

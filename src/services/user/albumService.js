@@ -13,3 +13,7 @@ export function createAlbum(user) {
     trip_location: user.password
   });
 }
+
+export function getAlbumDetail(name) {
+  return http.get(config.apiUrl + "/trip/" + name);
+}
