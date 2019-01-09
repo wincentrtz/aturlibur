@@ -28,11 +28,11 @@ const Modal = ({ modal, onPost, onChange }) => {
           </div>
           <div className="modal-body">
             {modal.input.map(input => (
-              <Input onChange={onChange} key={input.label} input={input} />
+              <Input onChange={onChange} key={input.label} id={input.id} input={input} />
             ))}
           </div>
           <div className="modal-footer">
-            <button type="button" onClick={onPost} className="btn btn-primary">
+            <button data-dismiss="modal" type="button" onClick={onPost} className="btn btn-primary">
               {modal.button}
             </button>
           </div>

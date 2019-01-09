@@ -5,12 +5,12 @@ export function getAlbums() {
   return http.get(config.apiUrl + "/trip");
 }
 
-export function createAlbum(user) {
+export function createAlbum(trip) {
   return http.post(config.apiUrl + "/trip", {
-    trip_name: user.name,
-    trip_start_date: user.email,
-    trip_end_date: user.phone,
-    trip_location: user.password
+    trip_name: trip.trip_name,
+    trip_start_date: trip.trip_start_date,
+    trip_end_date: trip.trip_end_date,
+    trip_location: trip.trip_location
   });
 }
 

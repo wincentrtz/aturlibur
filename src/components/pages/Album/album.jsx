@@ -3,7 +3,7 @@ import "./album.css";
 import RoundCard from "../../common/RoundCard/RoundCard";
 import plus from "../../../assets/plus.png";
 import Modal from "../../common/Modal/Modal";
-import { getAlbums } from "../../../services/user/albumService";
+import { getAlbums, createAlbum } from "../../../services/user/albumService";
 import { BounceLoader } from "react-spinners";
 import { css } from "@emotion/core";
 
@@ -20,22 +20,27 @@ class Album extends Component {
     modal: {
       title: "Add Album",
       id: "album-modal",
+      button : "Create Album",
       input: [
         {
           label: "Album Name",
-          type: "text"
+          type: "text",
+          id: "trip_name"
         },
         {
           label: "Album Start Date",
-          type: "date"
+          type: "date",
+          id: "trip_start_date"
         },
         {
           label: "Album End Date",
-          type: "date"
+          type: "date",
+          id: "trip_end_date"
         },
         {
           label: "Album Location",
-          type: "text"
+          type: "text",
+          id: "trip_location"
         }
       ]
     },
@@ -55,17 +60,36 @@ class Album extends Component {
     }
   }
 
-  handleCreateAlbum = () => {};
+  handleCreateAlbum = async() => {
+    this.setState({loading: true})
+    const {data:album} = await createAlbum(this.state.data);
+    if(album != null){
+      const albums = this.state.albums;
+      albums.push({
+        trip_name : album.data.trip_name,
+        trip_start_date : album.data.trip_start_date,
+        trip_end_date : album.data.trip_end_date,
+        trip_location : album.data.trip_location
+      })
+      this.setState({albums, loading:false});
+    }
+    
+  };
 
-  handleAlbumFormChange = () => {};
+  handleAlbumFormChange = (e) => {
+    const data = { ...this.state.data };
+    data[e.target.id] = e.target.value;
+    this.setState({ data });
+  };
 
   render() {
-    const { albums, modal, loading } = this.state;
-    console.log(albums);
+    const { albums, modal, loading,data } = this.state;
+    console.log(data);
     return (
       <div className="container">
         <Modal
-          onCreateAlbum={this.handleCreateAlbum}
+          onPost={this.handleCreateAlbum}
+          onChange={this.handleAlbumFormChange}
           modal={modal}
           key={modal.id}
         />

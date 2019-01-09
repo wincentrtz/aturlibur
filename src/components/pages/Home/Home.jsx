@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../../common/Navbar/Navbar";
 import "./home.css";
 import Landing from "./Landing/Landing";
 import About from "./About/About";

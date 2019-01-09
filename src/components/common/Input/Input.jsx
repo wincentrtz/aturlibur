@@ -6,7 +6,7 @@ const Input = ({ input, onChange }) => {
       <label>{input.label}</label>
       <input
         onChange={onChange}
-        id={input.type}
+        id={input.id}
         type={input.type}
         className="form-control"
       />

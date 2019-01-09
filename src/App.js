@@ -17,11 +17,13 @@ class App extends Component {
       input: [
         {
           label: "Email",
-          type: "email"
+          type: "email",
+          id: "email"
         },
         {
           label: "Password",
-          type: "password"
+          type: "password",
+          id: "password"
         }
       ]
     },
